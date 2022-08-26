@@ -1,0 +1,14 @@
+version: '3.6'
+services:
+    vsftpd:
+      image: fauria/vsftpd
+      environment:
+          - FTP_USER=joan
+          - FTP_PASS=joan
+          - FILE_OPEN_MODE=0777
+          - LOCAL_UMASK=0777
+      ports:
+          - 0.0.0.0:20:20
+          - 0.0.0.0:21:21
+      volumes: 
+          - C:\\Projectes\\docker\\storage:/storage
